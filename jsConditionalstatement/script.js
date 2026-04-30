@@ -61,5 +61,22 @@ for(let i=0;i<5;i++){
     console.log(i);
 }
 
-let choice;
+let choice=200;
+switch(choice){
+    case 1:{
+        console.log("Tea");
+        break;
+    }
+    case 2:{
+        console.log("coffee");
+        break;
+    }
+    case 3:{
+        console.log("lassi");
+        break;
+    }
+    default:{
+        console.log("pani");
+    }
+}
 
