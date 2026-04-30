@@ -45,5 +45,21 @@ console.log(data);
   //  data="N/A";
 //}
 //console.log(data);
+//in and first is false then other is not checked
+// in or first is true then other is not checked
 
+let x=20;
+{//when we use gates if first value is false then next  condition is not checked
+console.log(x>10 || y<=5)
+}
+
+//example for break and continue
+for(let i=0;i<5;i++){
+    if(i==3){
+        continue;
+    }
+    console.log(i);
+}
+
+let choice;
 
