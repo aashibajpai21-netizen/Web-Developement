@@ -6,3 +6,9 @@ function sum(x,y){
 function welcome(){
     console.log("welcome to js");
 }
+var a1=5;
+console.log(a);
+console.log(b);
+var b1=10;
+console.log(a);
+console.log(b);
