@@ -26,6 +26,8 @@ if(user){
 console.log(users);
 
 
+
+
 //let user1=users.filter(user1 => user1 =="Rahul");
 //console.log(user1);
 let user1=users.filter(user1=> user1.id !==1);
@@ -41,4 +43,5 @@ if(user2){
 console.log(user2);
 //updated list
 console.log(users);
+
   

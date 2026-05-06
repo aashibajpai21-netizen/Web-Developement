@@ -59,3 +59,12 @@ console.log(ar);
 console.log(ar.find((val) => val===1));
 console.log (ar.findIndex((val) => val ===1));
 console.log(ar.findLastIndex((val) => val ===6));
+
+let arr2=[22,43,6,74,43,23,78,90,56]
+console.log(arr2);
+console.log(arr2.filter((val) => val>20));//gives tge multi search
+console.log(arr2.find((val) => val>20));//gives single search and give first occurrence of successful
+console.log(arr2.slice(0,7));
+let ar2="this is my name";
+console.log(ar2);
+console.log(split());
