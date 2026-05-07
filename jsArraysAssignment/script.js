@@ -44,4 +44,10 @@ console.log(user2);
 //updated list
 console.log(users);
 
+
+users.push(30);
+users=users.filter(u => u.id !==1);
+console.log("updated users: "+users);
+
+
   
