@@ -76,3 +76,7 @@ console.log(str.toLowerCase());
  console.log(typeof a);
  let b=a.toString();
  console.log(b);
+ let c=3.145637382910290;
+ console.log(c.toFixed(5));
+ let fullName="Aman Verma";
+ //intercolation

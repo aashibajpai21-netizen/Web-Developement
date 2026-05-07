@@ -1,0 +1,10 @@
+#bulb1{
+    width:100px;
+    height:100px;
+    border-radius: 100%;
+    border:1px solid black;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+}
