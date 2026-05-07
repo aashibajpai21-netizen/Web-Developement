@@ -67,4 +67,12 @@ console.log(arr2.find((val) => val>20));//gives single search and give first occ
 console.log(arr2.slice(0,7));
 let ar2="this is my name";
 console.log(ar2);
-console.log(split());
+console.log(ar2.split(" "));
+let str="this part of my string";
+console.log(str.charAt(5));
+console.log(str.toLowerCase());
+ let a=3.14;
+ console.log(a);
+ console.log(typeof a);
+ let b=a.toString();
+ console.log(b);
