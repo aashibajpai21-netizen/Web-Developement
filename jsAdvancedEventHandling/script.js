@@ -19,3 +19,12 @@ function fillGreenColor(){
 function fillBaseColor(){
     document.getElementById("bulb1").style.backgroundColor="white";
 }
+
+
+
+
+
+
+
+
+
