@@ -8,7 +8,7 @@ document.querySelector("form").addEventListener("submit",(event) =>{
         email:em,
         password:ps,
     }
-    console.log("dataPacket");
+    console.log(dataPacket);
      const fn1=document.getElementById("fullName"). value= "";
     const em1=document.getElementById("email"). value= "";
     const ps1=document.getElementById("password"). value= "";
@@ -23,5 +23,6 @@ document.querySelector("form").addEventListener("reset",(event) =>{
 });
 document.addEventListener("keydown",(event) => {
     let keyPress= event.key;
-    keyPress==="Escape"
+    keyPress==="Escape" &&window.location.reload();
+    console.log(keyPress)
 })
