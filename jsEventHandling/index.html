@@ -1,30 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-      <link
+    <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
-     <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-    <div id="bulb1">Bulb</div>
-    <button id="bulbOn" onclick="BulbON()">ON</button>
-    <button id="bulbOff" onclick="BulbOFF()">OFF</button>
-    <button id="bulbOn1" onclick="BulbON1()">ON</button>
-    <button id="bulbOff1" onclick="BulbOFF()">OFF</button>
-    <button id="bulbOn2" onclick="BulbON2()">ON</button>
-    <button id="bulbOff2" onclick="BulbOFF()">OFF</button>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg-light">
+      <div id="bulb1">Bulb</div>
+      <button id="bulbOn" onclick="BulbON()">ON</button>
+      <button id="bulbOff" onclick="BulbOFF()">OFF</button>
+      <button id="bulbOn1" onclick="BulbON1()">ON</button>
+      <button id="bulbOff1" onclick="BulbOFF()">OFF</button>
+      <button id="bulbOn2" onclick="BulbON2()">ON</button>
+      <button id="bulbOff2" onclick="BulbOFF()">OFF</button>
+    </div>
+    <br />
+    <br />
+    <button id="bulbRed">Red</button>
+    <button id="bulbgreen">Green</button>
+    <button id="bulbblue">Blue</button>
+    <input type="color" id="bulbcolor" />
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
-integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" 
-crossorigin="anonymous">
-</script>
-<script src="script.js"></script>
-</body>
+    <br>
+    <br>
+<div class = " w-50 d-flex justify-content-center border border-2 border-black">
+    <div id="para" >
+      <h1 id="para1">This is a heading</h1>
+      <p id="para2">  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo praesentium
+        ea consequatur at a sunt, adipisci magni tempora, odio eaque repudiandae
+        enim autem asperiores consequuntur, doloribus temporibus? Laboriosam, quae
+        quos.</p>
+    </div>
+
+    <div class="button1">
+        <div >
+        <h5>Background Color: </h5>
+        <input type="color" id="result">
+        <div>
+            <div>
+        <h5>Heading color : </h5>
+        <input type="color" id="result1">
+        </div>
+
+        <div>
+        <h5>Paragraph color: </h5>
+        <input type="color" id="result2">
+    </div>
+    <button onclick="reset()" >Reset All </button>
+
+    </div>
+</div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
 </html>

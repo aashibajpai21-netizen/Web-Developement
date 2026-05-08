@@ -1,0 +1,30 @@
+#bulb1{
+    width:100px;
+    height:100px;
+    border-radius: 100%;
+    border:1px solid black;
+    display:flex;
+    align-items: center;
+    background:white;
+    justify-content: center;
+
+}
+.box{
+    height:15px;
+    width:30px;
+    border:1px solid black;
+    margin: 10px;
+}
+#parentbox{
+    display:flex;
+
+}
+#redbox{
+    background-color: red;
+}
+#greenbox{
+    background-color: green;
+}
+#bluebox{
+    background-color: blue;
+}
