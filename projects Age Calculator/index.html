@@ -16,11 +16,14 @@
 </head>
 <body>
 
-<div class="w-25 bg-light rounded shadow border mx-auto mt-5">
-    <h1 class="text center mb-3">Age Calculator</h1>
+<div class="w-25 bg-light rounded shadow border mx-auto mt-5 p-4">
+    <h1 class="text-center mb-3">Age Calculator</h1>
+
+
+
     <form class="d-flex flex-column  gap-3 align-items-center w-100 p-3">
         <label for="DOB">Enter your Date Of Birth</label>
-        <input type="data" name="DOB" id="DOB" class="form-control"/>
+        <input type="date" name="DOB" id="DOB" class="form-control"/>
         <label for="CurrentDate">Choose Current Date</label>
         <input type="date" name="CurrentDate" id="CurrentDate" class="form-control"/>
         
@@ -29,6 +32,7 @@
     </form>
     <div class="fw-bold text-center">
         Your Age is: 
+        <span id="MyAge"></span>
         
     </div>
 </div>
