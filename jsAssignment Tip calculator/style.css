@@ -1,0 +1,26 @@
+
+ .main{
+            width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        #result{
+            display: none;
+        }
+        .tip{
+            background-color: rgb(6, 6, 54);
+        }
+        .calculator{
+            background-color: rgb(255, 136, 0);
+            border-top-left-radius: 20px;
+border-top-right-radius: 20px;
+
+        }
+        .tick{
+            background-color: rgb(59, 181, 205);
+            
+        }

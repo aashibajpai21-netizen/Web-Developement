@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+      <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="tip p-4 m-5 w-50 d-flex justify-content-center  h-100" >
+ <div class="main mb-5 h-100 ">
+
+        <h1 class=" calculator text-center text-white fs-4">Tip Calculator</h1>
+        <label>Bill Amount</label>
+        <div class="d-flex justify-content-center">
+        <input type="text" placeholder="Enter bill amount"
+        class="form-control mb-3" id="bill">
+        <i class="bi bi-currency-rupee"></i>
+</div>
+
+        <label>How was the service?</label>
+        <select class="form-select mb-3" id="service">
+            <option value="0.25">25% - Top Notch</option>
+            <option value="0.20">20% - Excellent</option>
+            <option value="0.15">15% - Good</option>
+            <option value="0.10">10% - Bad</option>
+            <option value="0.05">5% - Worst</option>
+        </select>
+
+         <label>Total Number of People</label>
+        <input type="text" placeholder="Enter number of people"
+        class="form-control mb-3" id="people">
+    
+        <button class="  tick btn btn-primary fs-4 " onclick="calculateTip()">
+            Calculate
+        </button>
+
+        <div id="result" class="mt-4 text-center">
+            <h3>Tip Amount :</h3>
+            <h2 id="answer"></h2>
+        </div>
+
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" 
+crossorigin="anonymous">
+  
+   
+</script>
+    <script src="script.js"></script>
+</body>
+</html>
