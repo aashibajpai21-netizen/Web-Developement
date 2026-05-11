@@ -1,0 +1,26 @@
+ .box{
+            width: 400px;
+            border-radius: 20px 20px 0px 0px;
+        }
+
+        .btn1{
+            background-color: crimson;
+            color: white;
+            width: 100%;
+        }
+
+        .btn1:hover{
+            background-color: darkred;
+            color: white;
+        }
+
+        .btn2{
+            background-color: gray;
+             color: white;
+            width: 100%;
+        }
+
+        .btn2:hover{
+            background-color: black;
+            color: white;
+        }
