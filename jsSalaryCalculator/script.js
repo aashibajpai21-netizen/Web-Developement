@@ -1,81 +1,20 @@
-function calculateGrossSalary(basic){
+const basicSalaryInput = document.getElementById("basicSalary");
+const calculateBtn = document.getElementById("calculateBtn");
+const resetBtn = document.getElementById("resetBtn");
 
-    let hra = 0;
-    let da = 0;
+const errorMessage = document.getElementById("errorMessage");
+const successMessage = document.getElementById("successMessage");
 
-    if(basic < 10000){
+const spinner = document.getElementById("spinner");
+const btnText = document.getElementById("btnText");
 
-        hra = basic * 0.20;
-        da = basic * 0.80;
+const resultCard = document.getElementById("resultCard");
 
-    }
+const resultBasic = document.getElementById("resultBasic");
+const resultHra = document.getElementById("resultHra");
+const resultDa = document.getElementById("resultDa");
+const resultGross = document.getElementById("resultGross");
 
-    else if(basic <= 20000){
-
-        hra = basic * 0.25;
-        da = basic * 0.90;
-
-    }
-
-    else{
-
-        hra = basic * 0.30;
-        da = basic * 0.95;
-
-    }
-
-    const gross = basic + hra + da;
-
-    return{
-        basic,
-        hra,
-        da,
-        gross
-    };
-
-}
-
-
-// Calculate Button
-
-document.querySelector(".btn1").addEventListener("click",()=>{
-
-    const salary = Number(document.getElementById("salary").value);
-
-    const error = document.getElementById("error");
-
-    const success = document.getElementById("success");
-
-    error.innerText = "";
-
-    success.classList.add("d-none");
-
-
-
-    if(document.getElementById("salary").value === ""){
-
-        error.innerText = "Please enter salary";
-        return;
-
-    }
-
-    if(isNaN(salary) || salary < 0){
-
-        error.innerText = "Enter valid salary";
-        return;
-
-    }
-
-
-
-
-    const button = document.querySelector(".btn1");
-
-    const spinner = document.getElementById("spinner");
-
-    button.disabled = true;
-
-    spinner.classList.remove("d-none");
-
-
-});
+/*
+  Salary Rules:
+  HRA = 20% of Basic
