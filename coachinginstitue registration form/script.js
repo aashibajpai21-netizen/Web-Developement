@@ -16,7 +16,13 @@ document
           
            const city = document.getElementById("city").value;
             const pincode = document.getElementById("pin").value;
-         
+        
+        
+            const timings=[];
+              document.querySelectorAll("input[name='timings']:checked").forEach(item) => {
+                timings.push.(item.value);
+              });
+
 
          const registrationData = {
           "fullName":  fn,
@@ -29,9 +35,14 @@ document
           "course": course,
           "city": city,
           "pincode": pin,
+           "gender":gender,
+           "timings":timings,
 
-
-         }
+         };
+         validateData(registrationData)?(console.log("Registration Data:",registrationData),
+        alert("Registration successful ! check console for details."))
+        :alert("Registration unsuccessful enter valid data");
+        ));
 
   
 
@@ -47,6 +58,8 @@ document
 
     console.log(timings);
   });
+
+
 
 // ResetButton //date calculation 
 document
