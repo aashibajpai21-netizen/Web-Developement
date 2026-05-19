@@ -22,6 +22,12 @@ const myPromise = getData(1);
 */
 
 
+
+
+
+
+
+
 //this reduces time complkexity this is the best approach by using async await the most optimised way to call an API
 await getData(1);
 await getData(2);
