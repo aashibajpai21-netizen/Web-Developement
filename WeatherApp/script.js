@@ -13,6 +13,12 @@ async function getWeather(){
     
     const response = await fetch(WEATHER_API);
     const data = await response.json();
+       document.getElementById("cityText").innerText =
+    `${cityName}, ${data.sys.country}`;
+
+    // DATE
+    document.getElementById("dateText").innerText =
+    new Date().toDateString();
 
     const temperature = data.main.temp - 273.15;
 
@@ -25,6 +31,8 @@ async function getGeoLocation(city) {
 
     const response = await fetch(GEO_LOC_API);
     const data = await response.json();
+     
+    
 
     // console.log(data);
 
