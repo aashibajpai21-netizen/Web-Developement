@@ -31,3 +31,5 @@ async function loadCountries() {
         country1.appendChild(option1);
          country2.appendChild(option2);
     });
+
+    const amount =
