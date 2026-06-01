@@ -27,6 +27,13 @@ function App() {
       <Login/>
       <Product/>
       <Register/>
+
+
+
+
+
+
+
       
     </>
   );
