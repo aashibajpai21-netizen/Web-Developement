@@ -1,34 +1,31 @@
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
+import Product from "./Pages/Product";
 import ContactUs from "./Pages/ContactUs";
 import Login from "./Pages/Login";
-import Product from "./Pages/Product";
 import Register from "./Pages/Register";
 
-
-import {BrowserRouter,R } from "react-router-dom";
-
-import React from "react";
-
-//the function name is same as the file or folder name like in java class has the same name as the file
-//page reload is not possible in react
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <>
+      <BrowserRouter>
+        <Header />
 
-   
-      <Home/>
-      <About/>
-      <ContactUs/>
-      <Login/>
-      <Product/>
-      <Register/>
-      
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/product" element={<Product />} />
+          <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
+
 export default App;
