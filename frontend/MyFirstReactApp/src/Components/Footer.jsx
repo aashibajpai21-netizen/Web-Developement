@@ -1,9 +1,9 @@
-function Footer(){
-    return(
-        <>
-        <div id="cart">This is Footer </div>
-        
-        </>
-    );
+function Footer() {
+  return (
+    <>
+      <div id="footer">This Is Footer</div>
+    </>
+  );
 }
+
 export default Footer;
