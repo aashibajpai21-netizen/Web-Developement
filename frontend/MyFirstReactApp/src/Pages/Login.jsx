@@ -7,7 +7,7 @@ const handleSubmit=(e) => {
   e.preventDefault();
 
   console.log("userName :", userName);
-  console.log("password :",pasword);
+  console.log("password :",password);
 
 };
 

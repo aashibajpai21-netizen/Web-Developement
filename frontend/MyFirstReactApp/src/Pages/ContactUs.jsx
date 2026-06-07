@@ -1,40 +1,69 @@
-import {useState} from "react";
+import { useState } from "react";
 
 function ContactUs() {
-  const [userName, setUserName] = useState("");
-  const [phoneNumber , setPhoneNumber] = useState("");
-const [email , setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
+    console.log("Name :", name);
+    console.log("Email :", email);
+    console.log("Subject :", subject);
+    console.log("Message :", message);
+  };
 
   return (
     <>
-      <div className="d-flex justify-content-center">
+      <div className="container d-flex justify-content-center align-items-center">
         <div className="border p-3 w-50 mt-5 bg-light shadow rounded">
-          <h1 className="text-center">Contact Us!!!</h1>
+          <h1 className="text-center">Contact Us</h1>
           <br />
+
           <form onSubmit={handleSubmit}>
-            <label htmlFor="userName">Username</label>
+            <label htmlFor="name">Name</label>
             <input
               type="text"
-              name="userName"
+              name="name"
               className="form-control"
-              value={userName}
-              onChange={(e) => setUserName(e.target.value)}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             />
-            <br />
-            <label htmlFor="phoneNumber">Phone Number</label>
+
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              className="form-control"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+
+            <label htmlFor="subject">Subject</label>
             <input
               type="text"
-              name="phoneNumber"
+              name="subject"
               className="form-control"
-              value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
+              value={subject}
+              onChange={(e) => setSubject(e.target.value)}
             />
+
+            <label htmlFor="message">Message</label>
+            <textarea
+              name="message"
+              className="form-control"
+              rows="4"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            ></textarea>
+
             <br />
-            <div className="float-end">
+
+            <div className="text-end">
               <button type="submit" className="btn btn-primary">
-                Login
+                Send Message
               </button>
             </div>
           </form>
