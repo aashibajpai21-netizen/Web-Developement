@@ -1,5 +1,5 @@
 import logo from "./assets/cravings.png";
-//for gradient use bg-linear-to-b from-red-500 to-blue-500 
+//for gradient use bg-linear-to-b from-red-500 to-blue-500
 const App = () => {
   return (
     <>
