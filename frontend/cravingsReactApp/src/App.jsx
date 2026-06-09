@@ -1,8 +1,9 @@
 import logo from "./assets/cravings.png";
-
+//for gradient use bg-linear-to-b from-red-500 to-blue-500 
 const App = () => {
   return (
     <>
+    
       <div className=" p-1 bg-orange-500 flex items-center justify-between ">
         <div className="w-20 mx-3 ">
           <img src={logo} alt="bg image " />
@@ -22,3 +23,28 @@ const App = () => {
 };
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
