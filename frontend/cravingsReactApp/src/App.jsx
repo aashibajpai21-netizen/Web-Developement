@@ -3,11 +3,12 @@ import logo from "./assets/cravings.png";
 const App = () => {
   return (
     <>
-    
+    <div className="bg-[url('frontpageimg.avif')] bg-cover ">
       <div className=" p-1 bg-orange-500 flex items-center justify-between ">
         <div className="w-20 mx-3 ">
           <img src={logo} alt="bg image"/>
         </div>
+        
         <div>
           <button className=" bg-orange-500  hover: outline  rounded text-light fs-6 px-4 p-2 ">
             {" "}
@@ -17,9 +18,15 @@ const App = () => {
             Register
           </button>
 
-          ghghghghhghghghghghghghghghggh
+        
         </div>
+
+
       </div>
+
+       
+
+        </div>
     </>
   );
 };
