@@ -6,4 +6,4 @@ function About() {
   );
 }
 
-export default Footer;
+export default About;
