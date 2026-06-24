@@ -21,5 +21,5 @@ export const RegisterUser =(req,res) => {
         res.status(409).json({ message : "Email Already Registered"});
         return;
     }
-};
+}; 
  
