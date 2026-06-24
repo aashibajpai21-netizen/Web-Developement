@@ -73,3 +73,13 @@ takeOrder(() => {
         served();
     });
 });
+
+function displayMessage(name, callback) {
+    callback(name);
+}
+
+function customMessage(name) {
+    console.log(`Welcome, ${name}! Have a great day.`);
+}
+
+displayMessage("Aashi", customMessage);
