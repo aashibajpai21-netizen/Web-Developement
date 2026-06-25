@@ -2,7 +2,7 @@ import User from "../models/user.model.js";
 export const RegisterUser = async (req, res) => {
   try {
 
-      console.log(0);
+    
     const { fullName, email, password, phone, gender, dob } = req.body;
 
     if (!fullName || !email || !password || !phone || !gender || !dob) {
@@ -10,13 +10,13 @@ export const RegisterUser = async (req, res) => {
       return;
     }
 
-    console.log(1);
+
     const existingUser = await User.findOne({ email });
     if (existingUser) {
       res.status(409).json({ message: "Email Already Registered" });
       return;
     }
-      console.log(2);
+      
 
     const photourl = `https://placehold.co/600x400?text=${fullName.charAt(0).toUpperCase()}`;
 
@@ -26,7 +26,7 @@ export const RegisterUser = async (req, res) => {
       publicId: null,
     };
 
-      console.log(4);
+      
     const newUser = await User.create({
       fullName,
       email,
@@ -37,8 +37,8 @@ export const RegisterUser = async (req, res) => {
       photo,
     });
 
-    console.log(newUser);
-      console.log(5);
+    
+    
     res.status(201).json({message: "User Created Successfully"})
   }
    catch (error) {
