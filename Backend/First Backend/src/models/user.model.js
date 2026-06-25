@@ -22,9 +22,8 @@ const UserSchema = mongoose.Schema({
         url: {
             type: String,
         },
-        published:{
+        publicId:{
             type: String,
-            required:true,
         },
     },
     password: {
@@ -40,5 +39,5 @@ const UserSchema = mongoose.Schema({
    timestamps: true,
 },
 );
-const User = mongoose.model(UserSchema,"User");
+const User = mongoose.model("User",UserSchema);
 export default User;
