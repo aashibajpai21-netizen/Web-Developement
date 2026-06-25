@@ -83,3 +83,48 @@ function customMessage(name) {
 }
 
 displayMessage("Aashi", customMessage);
+function displayMessage(name, callback) {
+    callback(name);
+}
+
+function customMessage(name) {
+    console.log(`Welcome, ${name}! Have a great day.`);
+}
+
+displayMessage("Aashi", customMessage);
+
+function step1(callback) {
+    setTimeout(() => {
+        console.log("Step 1: Data Fetching");
+        callback();
+    }, 1000);
+}
+
+function step2(callback) {
+    setTimeout(() => {
+        console.log("Step 2: Data Processing");
+        callback();
+    }, 1000);
+}
+
+function step3(callback) {
+    setTimeout(() => {
+        console.log("Step 3: Data Saving");
+        callback();
+    }, 1000);
+}
+
+function step4() {
+    setTimeout(() => {
+        console.log("Step 4: Task Completed");
+    }, 1000);
+}
+
+// Nested callbacks
+step1(() => {
+    step2(() => {
+        step3(() => {
+            step4();
+        });
+    });
+});
