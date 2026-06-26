@@ -16,7 +16,8 @@ app.get("/",(req,res)=>{
     console.log("Default GET API HIT");
     res.json( {message:"welcome to my first backend project"});
 });
-
+//Default error hamdler
+app.use((err,req,res))
 
 const port = process.env.PORT || 5000;
 

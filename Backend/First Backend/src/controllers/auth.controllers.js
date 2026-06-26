@@ -9,12 +9,17 @@ export const RegisterUser = async (req, res) => {
       res.status(400).json({ message: "All Feilds Required" });
       return;
     }
+    if(! email || ! password){
+      const error= new Error("All fields required");
+      error.statusCode=400;
+      return nexr(error);
+    }
 
 
     const existingUser = await User.findOne({ email });
     if (existingUser) {
       res.status(409).json({ message: "Email Already Registered" });
-      return;
+      return next(error);
     }
       
 
@@ -46,8 +51,39 @@ export const RegisterUser = async (req, res) => {
     res.status(500).json({ message: "Internal Server Error" });
   }
 };
-export const LoginUser = (req, res) => {
-  res.json({ message: "Login Successful from Controller" });
+
+
+export const LoginUser = async (req, res) => {
+try{
+  const {email,password}=req.body;
+  if(!email || password){
+    const error = new Error("All fields Required");
+    error.statusCode=400;
+    return next(error);
+  }
+   const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      const error=new Error("Email not Registered" );
+      error.statusCode=404;
+      return next(error);
+    }
+    if(password !== existingUser.password){
+      const error= new Error("Incorrect Password");
+      error.statusCode = 401;
+      return next(error);
+    }
+
+
+    res.status(200).json({
+      message:"Welcome Back",
+      data:existingUser,
+    })
+
+}
+catch(error){
+  console.log(error.message);
+  next();
+}
 };
 
 export const LogoutUser = (req, res) => {
