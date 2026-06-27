@@ -1,91 +1,95 @@
+// 
 import User from "../models/user.model.js";
-export const RegisterUser = async (req, res) => {
-  try {
+import bcrypt from "bcrypt"
 
-    
+export const RegisterUser = async (req, res, next) => {
+  // res.json({ message: "Register successfull from controller" });
+  try {
     const { fullName, email, password, phone, gender, dob } = req.body;
 
     if (!fullName || !email || !password || !phone || !gender || !dob) {
-      res.status(400).json({ message: "All Feilds Required" });
-      return;
+      // res.status(400).json({ message: "All Feilds Required" });
+      const error = new Error("All Fields Required");
+      error.statusCode = 400;
+      return next(error);
     }
-    if(! email || ! password){
-      const error= new Error("All fields required");
-      error.statusCode=400;
-      return nexr(error);
-    }
-
 
     const existingUser = await User.findOne({ email });
     if (existingUser) {
-      res.status(409).json({ message: "Email Already Registered" });
+      // res.status(409).json({ message: "Email Already Registered" });
+      const error = new Error("Email Already Registered");
+      error.statusCode = 409;
       return next(error);
     }
-      
 
-    const photourl = `https://placehold.co/600x400?text=${fullName.charAt(0).toUpperCase()}`;
+    const phototurl = `https://placehold.co/600x400?text=${fullName.charAt(0).toUpperCase()}`;
 
-      console.log(3);
     const photo = {
-      url: photourl,
+      url: phototurl,
       publicId: null,
     };
+   const SALT= await bcrypt.genSalt(10);
+   const hashedPassword = await bcrypt.hash(password, SALT);
 
-      
     const newUser = await User.create({
       fullName,
       email,
-      password,
+   password : hashedPassword,
       phone,
       gender,
       dob,
       photo,
     });
 
-    
-    
     res.status(201).json({message: "User Created Successfully"})
+  } 
+  
+  catch (error) {
+    res.status(500).json({message:"Internal Server Error"})
   }
-   catch (error) {
-    console.log(error.message);
-    res.status(500).json({ message: "Internal Server Error" });
-  }
+
 };
 
+export const LoginUser = async (req, res, next) => {
+  // res.json({ message: "Login successfull from controller" });
+  try {
+    const {email,password}=req.body;
 
-export const LoginUser = async (req, res) => {
-try{
-  const {email,password}=req.body;
-  if(!email || password){
-    const error = new Error("All fields Required");
-    error.statusCode=400;
-    return next(error);
-  }
-   const existingUser = await User.findOne({ email });
-    if (existingUser) {
-      const error=new Error("Email not Registered" );
-      error.statusCode=404;
+    if(!email || !password){
+      const error = new Error("All Fields Required");
+      error.statusCode = 400;
       return next(error);
     }
-    if(password !== existingUser.password){
-      const error= new Error("Incorrect Password");
+    
+     const existingUser = await User.findOne({ email });
+    if (!existingUser) {
+      // res.status(409).json({ message: "Email Already Registered" });
+      const error = new Error("Email not Registered");
+      error.statusCode = 404;
+      return next(error);
+    }
+
+    const isVerified = await bcrypt.compare(password,existingUser.password)
+    if(!isVerified){
+      const error = new Error("Incorrect Password");
       error.statusCode = 401;
       return next(error);
     }
+  
 
-
+  
     res.status(200).json({
-      message:"Welcome Back",
-      data:existingUser,
+      message: "Welcome Back",
+      data: existingUser,
     })
 
-}
-catch(error){
-  console.log(error.message);
-  next();
-}
+  } catch (error) {
+    console.log(error.message);
+    next();
+  }
 };
 
 export const LogoutUser = (req, res) => {
-  res.json({ message: "Logout Successful from Controller" });
+  // res.json({ message: "Logout successfull from controller" });
+
 };

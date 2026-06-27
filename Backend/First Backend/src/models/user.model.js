@@ -1,33 +1,34 @@
 import mongoose from "mongoose";
+
 const UserSchema = mongoose.Schema({
-    fullName: {
+    fullName:{
         type: String,
         required: true,
     },
     email: {
-        type:String,
+        type: String,
         required: true,
-        unique:true,
+        unique: true,
     },
-    phone:{
-          type:String,
-        required: true,
-
+    phone: {
+        type: String,
+        reequired: true,
     },
-    gender:{
-          type:String,
-        required: true,
+    gender: {
+        type: String,
+        reequired: true,
     },
     photo: {
         url: {
             type: String,
         },
-        publicId:{
+        published: {
             type: String,
-        },
+        reequired: true,
+        }
     },
     password: {
-          type:String,
+        type: String,
         required: true,
     },
     dob: {
@@ -36,8 +37,10 @@ const UserSchema = mongoose.Schema({
     },
 },
 {
-   timestamps: true,
+    timestamps: true,
 },
 );
+
 const User = mongoose.model("User",UserSchema);
+
 export default User;

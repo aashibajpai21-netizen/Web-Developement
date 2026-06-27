@@ -1,27 +1,91 @@
-import dotenv from 'dotenv';
+// import dotenv from "dotenv";
+// dotenv.config();
+
+// import express from "express";
+// import AuthRouter from "./src/routers/auth.route.js";
+// import PublicRouter from "./src/routers/public.route.js";
+// import dbConnectionConfig from "./src/config/dbConnection.config.js";
+// import connectDB from "./src/config/dbConnection.config.js";
+// const app = express();
+// app.use(express.json());
+
+// app.use("/auth", AuthRouter);
+// app.use("/public", PublicRouter);
+
+// app.get("/", (req, res) => {
+//   console.log("Default GET API HIT");
+//   res.json({ message: "welcome to my first backend project" });
+// });
+// //Default error hamdler
+// app.use((err, req, res, next) => {
+//   const ErrMessage = err.message || "Internal Server Error";
+//   const ErrStatusCode = err.statusCode || 500;
+
+//   res.status(ErrStatusCode).json({ message: ErrMessage });
+// });
+
+// const port = process.env.PORT || 5000;
+
+// app.listen(port, () => {
+//   console.log("Server Started on PORT :", port);
+//   connectDB();
+// });
+
+
+import dotenv from "dotenv";
 dotenv.config();
 
-import express from 'express';
+import express from "express";
 import AuthRouter from "./src/routers/auth.route.js";
 import PublicRouter from "./src/routers/public.route.js";
 import dbConnectionConfig from "./src/config/dbConnection.config.js";
 import connectDB from "./src/config/dbConnection.config.js";
+
 const app = express();
+
 app.use(express.json());
 
 app.use("/auth", AuthRouter);
-app.use("/public",PublicRouter);
+app.use("/public", PublicRouter);
 
-app.get("/",(req,res)=>{
-    console.log("Default GET API HIT");
-    res.json( {message:"welcome to my first backend project"});
+//Default API
+app.get("/", (req, res) => {
+  console.log("Default Get API Hit");
+  res.json({ message: "Welcome to my first backened Project" });
 });
-//Default error hamdler
-app.use((err,req,res))
 
-const port = process.env.PORT || 5000;
+//default Error Handler
 
-app.listen(port, ( )=> {
-    console.log("Server Started on PORT :",port);
-    connectDB();
+app.use((err,req,res,next)  => {
+  const ErrMessage = err.message || "Internal Server Error";
+  const ErrStatusCode = err.statusCode || 500;
+
+  res.status(ErrStatusCode).json({message: ErrMessage});
+});
+
+// app.post("/login", (req, res) => {
+//   res.json({ message: "Login successfull" });
+// });
+
+// app.post("/logout", (req, res) => {
+//   res.json({ message: "Logout successfull" });
+// });
+
+// app.post("/register", (req, res) => {
+//   res.json({ message: "register successfull" });
+// });
+
+// app.put("/update", (req, res) => {
+//   res.json({ message: "update successfull" });
+// });
+
+// app.delete("/delete", (req, res) => {
+//   res.json({ message: "delete successfull" });
+// });
+
+const port = process.env.Port || 5000;
+
+app.listen(port, () => {
+  console.log("Server Started on PORT: ", port);
+  connectDB();
 });
